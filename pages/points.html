@@ -1,0 +1,300 @@
+<style>
+    /* Variables y configuración base */
+    :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #34495e;
+        --accent-color: #3498db;
+        --success-color: #2ecc71;
+        --danger-color: #e74c3c;
+        --warning-color: #f1c40f;
+        --text-color: #333;
+        --border-radius: 8px;
+        --transition-speed: 0.3s;
+    }
+
+    /* Contenedor principal */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .container h1 {
+        color: var(--primary-color);
+        border-bottom: 2px solid #eee;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+    }
+
+    /* Estilos del formulario */
+    .form-container {
+        background: white;
+        padding: 25px;
+        border-radius: var(--border-radius);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--text-color);
+        font-weight: 500;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        transition: border-color var(--transition-speed);
+    }
+
+    .form-group input:focus {
+        border-color: var(--accent-color);
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    }
+
+    .form-help {
+        font-size: 12px;
+        color: #666;
+        margin-top: 4px;
+        display: block;
+    }
+
+    /* Lista de puntos */
+    #pointList {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .animal-card {
+        background: white;
+        border-radius: var(--border-radius);
+        padding: 20px;
+        margin-bottom: 15px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        transition: transform var(--transition-speed);
+    }
+
+    .animal-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .animal-info {
+        flex: 1;
+    }
+
+    .info-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
+    }
+
+    .info-row i {
+        color: var(--accent-color);
+        font-size: 20px;
+        width: 24px;
+        text-align: center;
+    }
+
+    .info-row strong {
+        min-width: 100px;
+        color: var(--secondary-color);
+    }
+
+    /* Botones */
+    .button-group {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all var(--transition-speed);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    button i {
+        font-size: 18px;
+    }
+
+    .btn-primary {
+        background-color: var(--accent-color);
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: #2980b9;
+    }
+
+    .btn-danger {
+        background-color: var(--danger-color);
+        color: white;
+    }
+
+    .btn-danger:hover {
+        background-color: #c0392b;
+    }
+
+    /* Estados */
+    .empty-state {
+        text-align: center;
+        padding: 40px;
+        color: #666;
+        background: white;
+        border-radius: var(--border-radius);
+        margin: 20px 0;
+    }
+
+    .empty-state i {
+        font-size: 48px;
+        color: #ddd;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .loading-state {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 20px;
+        color: var(--text-color);
+    }
+
+    .loading-state i {
+        color: var(--accent-color);
+        font-size: 24px;
+    }
+
+    .error-message {
+        background: #fff3f3;
+        color: var(--danger-color);
+        padding: 15px;
+        border-radius: var(--border-radius);
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .error-message i {
+        font-size: 24px;
+    }
+
+    /* Utilidades */
+    .hidden {
+        display: none;
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .container {
+            padding: 10px;
+        }
+
+        .form-container {
+            padding: 15px;
+        }
+
+        .animal-card {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .button-group {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        button {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .info-row {
+            flex-wrap: wrap;
+        }
+
+        .info-row strong {
+            min-width: auto;
+        }
+    }
+</style>
+
+<div class="container">
+    <h1>Gestión de Puntos</h1>
+<!-- Formulario de Puntos -->
+<div class="form-container">
+    <form id="pointForm">
+        <div class="form-group">
+            <label for="pointId">ID (UUID):</label>
+            <input type="text" id="pointId" required placeholder="Ingrese UUID">
+        </div>
+
+        <div class="form-group">
+            <label for="description">Descripción:</label>
+            <input type="text" id="description" required placeholder="Ingrese descripción del punto">
+        </div>
+
+        <div class="form-group">
+            <label for="lat">Latitud:</label>
+            <input type="number" id="lat" required step="any" placeholder="Ingrese latitud (-90 a 90)">
+        </div>
+
+        <div class="form-group">
+            <label for="long">Longitud:</label>
+            <input type="number" id="long" required step="any" placeholder="Ingrese longitud (-180 a 180)">
+        </div>
+
+        <div class="button-group">
+            <button type="submit" id="submitBtn" class="btn-primary">
+                <i class="mdi mdi-content-save"></i>
+                Agregar Punto
+            </button>
+            <button type="button" id="cancelEdit" class="btn-danger hidden">
+                <i class="mdi mdi-close"></i>
+                Cancelar
+            </button>
+        </div>
+    </form>
+</div>
+
+<!-- Lista de Puntos -->
+<ul id="pointList"></ul>
+</div>
